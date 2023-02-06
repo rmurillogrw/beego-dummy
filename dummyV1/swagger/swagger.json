@@ -1,0 +1,88 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "beego Test API",
+        "description": "beego has a very cool tools to autogenerate documents for your API\n",
+        "version": "1.0.0",
+        "termsOfService": "http://beego.me/",
+        "contact": {
+            "email": "astaxie@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "basePath": "/v1",
+    "paths": {
+        "/getPlayers/": {
+            "get": {
+                "tags": [
+                    "getPlayers"
+                ],
+                "description": "Get List Of Players From a CSV File\n\u003cbr\u003e",
+                "operationId": "PlayerController.GetPLayers",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body with name of File\t",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.File"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.Player"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "bad request body"
+                    },
+                    "404": {
+                        "description": "file not found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "models.File": {
+            "title": "File",
+            "type": "object",
+            "properties": {
+                "filePath": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.Player": {
+            "title": "Player",
+            "type": "object",
+            "properties": {
+                "country": {
+                    "type": "string"
+                },
+                "currency": {
+                    "type": "string"
+                },
+                "player": {
+                    "type": "string"
+                },
+                "playerId": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
