@@ -17,7 +17,7 @@ func init() {
 	ns := beego.NewNamespace("/v1",
 		beego.NSNamespace("/getPlayers",
 			beego.NSInclude(
-				&controllers.PlayerController{},
+				&controllers.PlayerController{}, // body with property : {"filePath":"filePath"} // example: data/players_5.csv
 			),
 		),
 	)

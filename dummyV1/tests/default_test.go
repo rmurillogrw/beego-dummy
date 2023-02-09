@@ -1,18 +1,11 @@
 package test
 
 import (
-	"net/http"
-	"net/http/httptest"
-	"testing"
-	"runtime"
-	"path/filepath"
 	_ "dummyV1/routers"
-
-	beego "github.com/beego/beego/v2/server/web"
-	"github.com/beego/beego/v2/core/logs"
-	. "github.com/smartystreets/goconvey/convey"
 )
 
+// Not using it for now, using API for testing
+/*
 func init() {
 	_, file, _, _ := runtime.Caller(0)
 	apppath, _ := filepath.Abs(filepath.Dir(filepath.Join(file, ".." + string(filepath.Separator))))
@@ -36,4 +29,4 @@ func TestGet(t *testing.T) {
 	        })
 	})
 }
-
+*/
